@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Koleksi AudioBook Canggih</title>
+  <meta name="description" content="Koleksi eksklusif buku audio (Sound Ebook) pilihan dengan pengalaman interaktif yang canggih.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="styles.min.css">
+</head>
+<body>
+
+  <div class="preloader"><div class="spinner"></div></div>
+
+  <header class="main-header">
+    <nav class="container">
+      <a href="#" class="logo">AudioBook</a>
+      <div class="nav-controls">
+        <ul class="nav-menu">
+          <li><a href="#" class="nav-link">Beranda</a></li>
+          <li><a href="#collection" class="nav-link">Koleksi</a></li>
+        </ul>
+        <div class="theme-switcher">
+          <input type="checkbox" id="darkModeToggle" class="theme-toggle-checkbox">
+          <label for="darkModeToggle" class="theme-toggle-label">
+            <i class="fas fa-moon"></i><i class="fas fa-sun"></i><span class="ball"></span>
+          </label>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main-content">
+    <section class="hero">
+      <div class="hero-background"></div>
+      <div class="container">
+        <div class="hero-content">
+          <h1 class="hero-title">Selamat datang di Podcast AudioBook.</h1>
+          <p class="hero-subtitle">Semoga setiap pembahasan kami bisa membantu kalian memahami isi dan makna dari setiap buku dengan lebih mendalam.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="collection" class="book-collection container">
+      <div class="search-wrapper">
+        <input type="search" id="search-input" placeholder="Cari buku berdasarkan judul atau penulis...">
+      </div>
+      <div class="card-grid">
+        
+        <article class="book-card" data-id="1" data-title="Sebuah Seni Untuk Bersikap Bodo Amat" data-author="Mark Manson" data-audio="audio/sebuah-seni.mp3" data-desc="Pendekatan yang waras demi menjalani hidup yang baik dan tidak selalu positif adalah kuncinya. Sebuah buku yang menantang pemikiran konvensional tentang kebahagiaan.">
+          <div class="card-image-wrapper"><img src="gambar/seni-berpikir.jpg" alt="Sampul buku Sebuah Seni Untuk Bersikap Bodo Amat" loading="lazy"></div>
+          <div class="card-content">
+            <h3>Sebuah Seni Untuk Bersikap Bodo Amat</h3><p class="author">Mark Manson</p><button class="listen-btn">Dengarkan <i class="fas fa-play"></i></button>
+          </div>
+        </article>
+        
+        <article class="book-card" data-id="2" data-title="Filosofi Teras" data-author="Henry Manampiring" data-audio="audio/filosofi-teras.jpg" data-desc="Mengupas filsafat Stoa kuno yang sangat relevan untuk mengatasi kekhawatiran dan emosi negatif di zaman modern. Buku ini adalah panduan praktis untuk ketenangan.">
+          <div class="card-image-wrapper"><img src="gambar/filosofi-teras.jpg" alt="Sampul buku Filosofi Teras" loading="lazy"></div>
+          <div class="card-content">
+            <h3>Filosofi Teras</h3><p class="author">Henry Manampiring</p><button class="listen-btn">Dengarkan <i class="fas fa-play"></i></button>
+          </div>
+        </article>
+        
+        </div>
+    </section>
+  </main>
+
+  <footer class="main-footer">
+    <div class="container">
+      <div class="footer-content">
+        <p>&copy; 2025 Jeeyhosting. All Rights Reserved.</p>
+        <div class="social-links">
+          <a href="https://tiktok.com/@username" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+          <a href="https://instagram.com/username" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://yourwebsite.com" target="_blank" rel="noopener noreferrer" aria-label="Website"><i class="fas fa-globe"></i></a>
+          <a href="https://github.com/username/repo" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <div class="book-modal">
+    <div class="modal-content">
+      <button class="modal-close-btn" aria-label="Tutup modal"><i class="fas fa-times"></i></button>
+      <div class="modal-body">
+        <div class="modal-cover"><img src="" alt="Cover Buku"></div>
+        <div class="modal-details">
+          <h2 class="modal-title"></h2>
+          <p class="modal-author"></p>
+          <p class="modal-description"></p>
+          <audio controls src="" class="modal-audio"></audio>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <a href="#" class="back-to-top" aria-label="Kembali ke atas"><i class="fas fa-arrow-up"></i></a>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/js-search@2.0.0/dist/js-search.min.js"></script>
+  <script src="script.min.js"></script>
+</body>
+</html>

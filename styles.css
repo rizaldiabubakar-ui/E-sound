@@ -1,0 +1,150 @@
+/* === PENGATURAN GLOBAL & DESAIN FINAL === */
+:root {
+    --font-heading: 'Playfair Display', serif;
+    --font-body: 'Inter', sans-serif;
+    
+    /* Light Mode Palette */
+    --color-background-light: #f8f9fa;
+    --color-text-light: #495057;
+    --color-heading-light: #212529;
+    --color-card-bg-light: #ffffff;
+    --color-border-light: #dee2e6;
+    --gradient-bg-light: linear-gradient(135deg, #e0c3fc 0%, #8ec5fc 100%);
+    
+    /* Dark Mode Palette */
+    --color-background-dark: #0d1117;
+    --color-text-dark: #adb5bd;
+    --color-heading-dark: #f8f9fa;
+    --color-card-bg-dark: #161b22;
+    --color-border-dark: #30363d;
+    --gradient-bg-dark: linear-gradient(135deg, #0d1117 0%, #2c3e50 100%);
+
+    /* Universal Colors */
+    --color-accent: #007bff;
+    --color-accent-hover: #0056b3;
+    --shadow: 0px 10px 30px rgba(0, 0, 0, 0.07);
+    --transition-speed: 0.3s;
+}
+
+body {
+    --color-background: var(--color-background-light);
+    --color-text: var(--color-text-light);
+    --color-heading: var(--color-heading-light);
+    --color-card-bg: var(--color-card-bg-light);
+    --color-border: var(--color-border-light);
+    --gradient-bg: var(--gradient-bg-light);
+}
+
+body.dark-mode {
+    --color-background: var(--color-background-dark);
+    --color-text: var(--color-text-dark);
+    --color-heading: var(--color-heading-dark);
+    --color-card-bg: var(--color-card-bg-dark);
+    --color-border: var(--color-border-dark);
+    --gradient-bg: var(--gradient-bg-dark);
+    --shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+    font-family: var(--font-body);
+    background-color: var(--color-background);
+    color: var(--color-text);
+    margin: 0;
+    line-height: 1.7;
+    transition: background-color var(--transition-speed), color var(--transition-speed);
+}
+.container { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
+
+/* === PRELOADER === */
+.preloader { /*...gaya preloader tetap sama... */ }
+.spinner { /*...gaya spinner tetap sama... */ }
+@keyframes spin { /*...keyframes spin tetap sama... */ }
+
+/* === HEADER === */
+.main-header { /*...gaya header tetap sama, pastikan warna latar belakang transparan menggunakan variabel... */ }
+/*...gaya navigasi lainnya tetap sama... */
+
+/* === DARK MODE TOGGLE === */
+/*...gaya theme-switcher tetap sama... */
+
+/* === HERO SECTION (dengan Paralaks) === */
+.hero {
+    position: relative;
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+    color: var(--color-heading-dark); /* Teks putih lebih kontras di atas gradien */
+}
+.hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 120%; /* Lebih tinggi untuk efek paralaks */
+    background-image: var(--gradient-bg);
+    z-index: -1;
+}
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
+.hero-title { font-family: var(--font-heading); font-size: clamp(2.5rem, 5vw, 4rem); margin: 0 0 1rem 0; line-height: 1.2; text-shadow: 0 2px 10px rgba(0,0,0,0.3); }
+.hero-subtitle { font-size: clamp(1rem, 2vw, 1.2rem); max-width: 600px; margin: 0 auto; text-shadow: 0 1px 5px rgba(0,0,0,0.3); }
+
+/* === BOOK COLLECTION & CARD (dengan Efek 3D) === */
+.book-collection { padding: 4rem 1.5rem; }
+.search-wrapper { margin-bottom: 3rem; }
+#search-input {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1rem;
+    border-radius: 8px;
+    border: 1px solid var(--color-border);
+    background-color: var(--color-card-bg);
+    color: var(--color-text);
+    outline: none;
+    transition: all var(--transition-speed);
+}
+#search-input:focus {
+    border-color: var(--color-accent);
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+}
+.card-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 2.5rem; perspective: 1000px; }
+.book-card {
+    background-color: var(--color-card-bg);
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+    transform-style: preserve-3d;
+    will-change: transform;
+}
+.card-image-wrapper { /*...gaya wrapper gambar tetap sama... */ }
+.card-content { /*...gaya konten kartu tetap sama... */ }
+.listen-btn { /*...gaya tombol tetap sama... */ }
+
+/* === MODAL === */
+/*...gaya modal tetap sama... */
+
+/* === FOOTER (dengan Ikon Sosial) === */
+.main-footer { text-align: center; padding: 2.5rem 0; margin-top: 2rem; border-top: 1px solid var(--color-border); }
+.footer-content { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+.social-links { display: flex; gap: 1.5rem; }
+.social-links a { font-size: 1.5rem; color: var(--color-text); transition: color var(--transition-speed), transform var(--transition-speed); }
+.social-links a:hover,.social-links a:focus { color: var(--color-accent); transform: translateY(-3px); }
+
+/* === BACK TO TOP === */
+/*...gaya back-to-top tetap sama... */
+
+/* === RESPONSIVE === */
+@media (max-width: 768px) {
+   .footer-content { flex-direction: column; }
+    /*...gaya responsif lainnya tetap sama... */
+}
